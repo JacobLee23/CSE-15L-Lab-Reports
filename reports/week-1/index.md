@@ -1,6 +1,8 @@
 ## Lab Report 1 (Week 1)
 
-![File Hierarchy](file-hierarchy.png)
+![File Hierarchy](./file-hierarchy.png)
+
+***
 
 ### `cd`
 
@@ -61,3 +63,7 @@
   ```bash
   [user@sahara ~]$ cat lecture1/README
   ```
+
+---
+
+## Relevant XKCD
