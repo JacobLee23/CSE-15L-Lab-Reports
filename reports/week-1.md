@@ -1,6 +1,6 @@
 ## Lab Report 1 (Week 1)
 
-![File Hierarchy](assets/week-1/file-hierarchy.png)
+![File Hierarchy](https://jacoblee23.github.io/CSE-15L-Lab-Reports/assets/week-1/file-hierarchy.png)
 
 ***
 
