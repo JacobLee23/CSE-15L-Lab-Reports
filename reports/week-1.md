@@ -1,6 +1,6 @@
 ## Lab Report 1 (Week 1)
 
-<img src="file-hierarchy.png" alt="File Hierarchy">
+![File Hierarchy](/assets/week-1/file-hierarchy.png)
 
 ***
 

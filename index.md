@@ -1,3 +1,3 @@
 ## Reports
 
-- [Week 1](reports/week-1/index.html)
+- [Week 1](/reports/week-1/index.html)
