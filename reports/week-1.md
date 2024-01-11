@@ -2,60 +2,60 @@
 
 ### `cd`
 
-1. No arguments
+- No arguments
 
-    ```bash
-    [user@sahara ~]$ cd
-    ```
+  ```bash
+  [user@sahara ~]$ cd
+  ```
 
-2. One argument: Directory
+- One argument: Directory
 
-    ```bash
-    [user@sahara ~]$ cd lecture1/
-    ```
+  ```bash
+  [user@sahara ~]$ cd lecture1/
+  ```
 
-3. One argument: File
+- One argument: File
 
-    ```bash
-    [user@sahara ~]$ cd lecture1/messages/en-us.txt
-    ```
+  ```bash
+  [user@sahara ~]$ cd lecture1/messages/en-us.txt
+  ```
 
 ### `ls`
 
-1. No arguments
+- No arguments
 
-    ```bash
-    [user@sahara ~]$ ls
-    ```
+  ```bash
+  [user@sahara ~]$ ls
+  ```
 
-2. One argument: Directory
+- One argument: Directory
 
-    ```bash
-    [user@sahara ~]$ ls lecture1/messages/
-    ```
+  ```bash
+  [user@sahara ~]$ ls lecture1/messages/
+  ```
 
-3. One argument: File
+- One argument: File
 
-    ```bash
-    [user@sahara ~]$ ls lecture1/Hello.class
-    ```
+  ```bash
+  [user@sahara ~]$ ls lecture1/Hello.class
+  ```
 
 ### `cat`
 
-1. No arguments
+- No arguments
 
-    ```bash
-    [user@sahara ~]$ cat
-    ```
+  ```bash
+  [user@sahara ~]$ cat
+  ```
 
-2. One argument: Directory
+- One argument: Directory
 
-    ```bash
-    [user@sahara ~]$ cat lecture1/
-    ```
+  ```bash
+  [user@sahara ~]$ cat lecture1/
+  ```
 
-3. One argument: File
+- One argument: File
 
-    ```bash
-    [user@sahara ~]$ cat lecture1/README
-    ```
+  ```bash
+  [user@sahara ~]$ cat lecture1/README
+  ```
