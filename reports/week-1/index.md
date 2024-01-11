@@ -1,6 +1,6 @@
 ## Lab Report 1 (Week 1)
 
-![File Hierarchy](./file-hierarchy.png)
+<img src="file-hierarchy.png" alt="File Hierarchy">
 
 ***
 
@@ -67,3 +67,5 @@
 ---
 
 ## Relevant XKCD
+
+![Relevant XKCD](https://www.explainxkcd.com/wiki/images/b/bd/server_problem.png)
