@@ -1,6 +1,6 @@
 ## Lab Report 1 (Week 1)
 
-![File Hierarchy](reports/week-1/file-hierarchy.png)
+![File Hierarchy](file-hierarchy.png)
 
 ### `cd`
 
