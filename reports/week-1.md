@@ -12,14 +12,14 @@
 
   ```bash
   [user@sahara ~]$ cd
-  [user@sahara ~]$
+  [user@sahara ~]$ 
   ```
 
   Initially, running the `cd` command and passing no arguments appears to have no effect. However, running the `cd` command from one of the descendent directories (e.g., `~/lecture1/`) provides more insight into the command behavior:
 
   ```bash
   [user@sahara ~/lecture1]$ cd
-  [user@sahara ~]$
+  [user@sahara ~]$ 
   ```
 
   When no arguments are passed to the `cd` command, by default the command changes the current working directory to the root directory (`~/` in this case).
@@ -40,14 +40,14 @@
 
   ```bash
   [user@sahara ~/lecture/messages]$ cd ~/lecture/
-  [user@sahara ~/lecture]$
+  [user@sahara ~/lecture]$ 
   ```
 
   *Relative*:
 
   ```bash
   [user@sahara ~/lecture/messages]$ cd ../
-  [user@sahara ~/lecture]$
+  [user@sahara ~/lecture]$ 
   ```
 
 - One argument: File
