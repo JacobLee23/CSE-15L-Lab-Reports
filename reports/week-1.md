@@ -22,7 +22,7 @@
   [user@sahara ~]$ 
   ```
 
-  When the `cd` command is executed and no arguments are passed, by default the command changes the current working directory to the root directory (`~/` in this case).
+  When the `cd` command is executed and no arguments are passed, the command changes the current working directory to the root directory (`~/` in this case).
 
 - One argument: Directory
 
@@ -57,7 +57,7 @@
   bash: cd: lecture1/messages/en-us.txt: Not a directory
   ```
 
-  Executing the `cd` command and passing the path to a file attempts to change the current working directory to a file, which is an invalid operation. Since the working directory must be a directory, not a file, the `cd` command throws and error.
+  Executing the `cd` command and passing the path to a file attempts to change the current working directory to a file, which is an invalid operation. Since the working directory must be a directory, not a file, the `cd` command throws an error.
 
 ### `ls`
 
@@ -82,7 +82,7 @@
   [user@sahara ~]$ ls lecture1/messages/
   ```
 
-  Executing the `ls` command and passing the path to a directory will list all the directories and files that are children of the indicated path. Note that executing `$ ls ./` has the same behavior as executing `ls` and passing no arguments.
+  Executing the `ls` command and passing the path to a directory will list all the directories and files that are children of the indicated path.
 
   The argument passed to the `ls` command can be either absolute or relative. Note how the following commands demonstrate the same behavior:
 
@@ -100,6 +100,8 @@
   Hello.class  Hello.java  messages  README
   ```
 
+  Note that executing `$ ls ./` has the same behavior as executing `ls` and passing no arguments and is the default behavior of the `ls` command.
+
 - One argument: File
 
   ```bash
@@ -114,7 +116,7 @@
   /home/lecture1/Hello.class
   ```
 
-  Executing the `ls` command and passing the path to a file will echo the indicated path, returning an absolute path when an absolute path is given and a relative path when a relative path is given.
+  Executing the `ls` command and passing the path to a file echoes the indicated path, returning an absolute path when an absolute path is given and a relative path when a relative path is given.
 
 ### `cat`
 
@@ -122,18 +124,62 @@
 
   ```bash
   [user@sahara ~]$ cat
+  
   ```
+
+  Initially, executing the `cat` command and passing no arguments appears to cause the command to hang indefinitely. However, when no arguments are passed, the `cat` reads from the standard input stream then outputs the contents of the standard input.
+
+  ```bash
+  [user@sahara ~]$ cat
+  Hello World!    // User Input
+  Hello World!    // Command Output
+
+  ```
+
+  The `cat` command continues to read from the standard input and output its contents until the user terminates the command (<kbd>Ctrl</kbd><kbd>C</kbd>/<kbd>Cmd</kbd><kbd>C</kbd>).
 
 - One argument: Directory
 
   ```bash
   [user@sahara ~]$ cat lecture1/
+  cat: lecture1/: Is a directory
   ```
+
+  Executing the `cat` command and passing the path to a directory attempts to read the contents of the directory, which is an invalid operation, and throws an error.
 
 - One argument: File
 
   ```bash
   [user@sahara ~]$ cat lecture1/README
+  To use this program:
+
+  javac Hello.java
+  java Hello messages/en-us.txt
+  ```
+
+  Executing the `cat` command and passing the path to a file prints the contents of the file. This works with all files, including binary files:
+
+  ```bash
+  [user@sahara ~]$ cat lecture1/Hello.class
+  ����A2
+
+  java/lang/Object<init>()java/lang/String
+  
+  
+  
+  
+  java/nio/file/Pathof;(Ljava/lang/String;[Ljava/lang/String;)Ljava/nio/file/Path;
+  !java/nio/charset/StandardCharsetsUTF_8Ljava/nio/charse
+  t/Charset;
+  
+  java/nio/file/Files
+  readStringB(Ljava/nio/file/Path;Ljava/nio/charset/Charset;)Ljava/lang/String;
+   java/lang/SystemoutLjava/io/PrintStream;
+  "#$
+  %&java/io/PrintStreamprintln(Ljava/lang/String;)V(HelloCodeLineNumberTablemain([Ljava/lang/String;)V
+  Exceptions/java/io/IOException
+  SourceFile
+  Hello.java!')*��*+,)9*2����L�
   ```
 
 ---
