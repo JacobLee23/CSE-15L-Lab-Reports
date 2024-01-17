@@ -15,14 +15,14 @@
   [user@sahara ~]$ 
   ```
 
-  Initially, running the `cd` command and passing no arguments appears to have no effect. However, running the `cd` command from one of the descendent directories (e.g., `~/lecture1/`) provides more insight into the command behavior:
+  Initially, executing the `cd` command and passing no arguments appears to have no effect. However, executing the `cd` command from one of the descendent directories (e.g., `~/lecture1/`) provides more insight into the command behavior:
 
   ```bash
   [user@sahara ~/lecture1]$ cd
   [user@sahara ~]$ 
   ```
 
-  When no arguments are passed to the `cd` command, by default the command changes the current working directory to the root directory (`~/` in this case).
+  When the `cd` command is executed and no arguments are passed, by default the command changes the current working directory to the root directory (`~/` in this case).
 
 - One argument: Directory
 
@@ -31,7 +31,7 @@
   [user@sahara ~/lecture1]$ 
   ```
 
-  Passing the path to a directory when executing the `cd` command will change the current working directory to the indicated directory.
+  Executing the `cd` command and passing the path to a directory will change the current working directory to the indicated directory.
 
   The argument passed to the `cd` command can be either absolute or relative. Note how the following commands demonstrate the same behavior:
 
@@ -57,7 +57,7 @@
   bash: cd: lecture1/messages/en-us.txt: Not a directory
   ```
 
-  Attempting to change the current working directory to a file by passing to the `cd` command the path to a file will throw an error. The working directory must be a directory, not a file.
+  Executing the `cd` command and passing the path to a file attempts to change the current working directory to a file, which is an invalid operation. Since the working directory must be a directory, not a file, the `cd` command throws and error.
 
 ### `ls`
 
