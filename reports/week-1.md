@@ -35,7 +35,6 @@
 
   The argument passed to the `cd` command can be either absolute or relative. Note how the following commands demonstrate the same behavior:
 
-
   *Absolute*:
 
   ```bash
@@ -74,7 +73,7 @@
   en-gb.txt  en-us.txt  es-mx.txt  zh-cn.txt
   ```
 
-  Executing the `ls` command and passing no arguments lists all the directories and files that are children of the current working directory in [ASCIIbetical order](https://www.cs.cmu.edu/~pattis/15-1XX/common/handouts/ascii.html).
+  Executing the `ls` command and passing no arguments lists all the directories and files that are children of the current working directory. The returned items are listed in [ASCIIbetical order](https://www.cs.cmu.edu/~pattis/15-1XX/common/handouts/ascii.html), with one main exception: files/directories beginning with a letter are listed together, with those beginning with a capital letter preceding those beginning with a lowercase letter (as opposed to all files/directories beginning with a capital letter being listed before all files/directories beginning with a lowercase letter).
 
 - One argument: Directory
 
