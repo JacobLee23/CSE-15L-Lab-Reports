@@ -185,4 +185,4 @@ Hello.java!')*��*+,)9*2����L�
 
 # Relevant XKCD
 
-![Relevant XKCD](https://www.explainxkcd.com/wiki/images/b/bd/server_problem.png)
+![Relevant XKCD](https://imgs.xkcd.com/comics/server_problem_2x.png)
