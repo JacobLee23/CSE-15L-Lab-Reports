@@ -166,6 +166,8 @@ $ ssh jal128@ieng6.ucsc.edu
 
 # Conclusion
 
+In Labs 2 and 3, I learned the fundamentals of **Secure Shell Protocol (SSH)**, a concept I had previously heard of but never learned. I learned about connecting to the `ieng6` remote server via the `ssh` command and copying files between the local and remote filesystems via the `scp` command. Additionally, in those labs, I learned about the **client URL** (`curl`) command, another concept I had previously heard of but never learned, and using it to retrieve the HTML content of a web page via the URL of the page.
+
 ---
 
 # Relevant XKCD
