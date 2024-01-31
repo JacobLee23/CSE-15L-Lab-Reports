@@ -75,7 +75,15 @@ Server Started
 
 ![Message 1](../assets/report-2/message-1.png)
 
-Accessing the above URL 
+Accessing the above URL calls the `Handler::handleRequest` method, passing for parameter `url` a `URI` object corresponding to the URL `http://127.0.0.1:8050/add-message?s=You%20look%20very%20kickable&user=Brenton%20Dunn`. Prior to the `Handler::handleRequest` call, the field `Handler.messages` is a reference to an empty `ArrayList` object of `String` objects. 
+
+As a result of this call to `Handler::handleRequest`, the `Handler.messages` field references an `ArrayList` object containing one `String` object:
+
+```java
+[
+    "Brenton Dunn: You look very kickable"
+]
+```
 
 ## Message 2
 
@@ -84,6 +92,23 @@ Accessing the above URL
 * **URL**: `http://127.0.0.1:8050/add-message?s=Rocks%20can%20be%20a%20hobby.%20Throwing%20rocks%20is%20a%20fun%20past%20time.%20Especially%20at%20people.&user=Joelle%20Chien`
 
 ![Message 2](../assets/report-2/message-2.png)
+
+Accessing the above URL calls the `Handler::handleRequest` method, passing for parameter `url` a `URI` object corresponding to the URL `http://127.0.0.1:8050/add-message?s=Rocks%20can%20be%20a%20hobby.%20Throwing%20rocks%20is%20a%20fun%20past%20time.%20Especially%20at%20people.&user=Joelle%20Chien`. Prior to the `Handler::handleRequest` call, the field `Handler.messages` is a reference to an `ArrayList` object containing one `String` object:
+
+```java
+[
+    "Brenton Dunn: You look very kickable"
+]
+```
+
+As a result of this call to `Handler::handleRequest`, the `Handler.messages` field references an `ArrayList` object containing two `String` objects:
+
+```java
+[
+    "Brenton Dunn: You look very kickable",
+    "Joelle Chien: Rocks can be a hobby. Throwing rocks is a fun past time. Especially at people."
+]
+```
 
 ---
 
