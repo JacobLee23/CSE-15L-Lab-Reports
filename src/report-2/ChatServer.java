@@ -4,18 +4,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 
-/**
- * 
- */
 class Handler implements URLHandler {
-    /**
-     * 
-     */
+
     ArrayList<String> messages = new ArrayList<String>();
-    
-    /**
-     * 
-     */
+
     public String handleRequest(URI url) {
         switch (url.getPath()) {
             case "/":
@@ -41,21 +33,8 @@ class Handler implements URLHandler {
 }
 
 
-/**
- * 
- */
 class ChatServer {
-    /**
-     * Usage:
-     * 
-     * ```
-     * $ javac ChatServer.java
-     * $ java ChatServer <port>
-     * ```
-     * 
-     * @param args
-     * @throws IOException
-     */
+
     public static void main(String[] args) throws IOException {
         if (args.length != 1) {
             System.out.println(
