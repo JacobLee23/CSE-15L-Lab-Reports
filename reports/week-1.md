@@ -26,7 +26,7 @@ However, executing the `cd` command from a non-root directory provides more valu
 
 ```bash
 [user@sahara ~/lecture1/messages]$ cd
-[user@sahara ~]$
+[user@sahara ~]$ 
 ```
 
 The above two examples demonstrate the default behavior of the `cd` command: executing the `cd` command and passing no arguments changes the working directory to the root directory `~/`.
@@ -205,7 +205,7 @@ t/Charset;
 java/nio/file/Files
 readStringB(Ljava/nio/file/Path;Ljava/nio/charset/Charset;)Ljava/lang/String;
  java/lang/SystemoutLjava/io/PrintStream;
-"#$
+"#$ 
 %&java/io/PrintStreamprintln(Ljava/lang/String;)V(HelloCodeLineNumberTablemain([Ljava/lang/String;)V
 Exceptions/java/io/IOException
 SourceFile
