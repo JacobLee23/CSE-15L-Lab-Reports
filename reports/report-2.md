@@ -1,4 +1,4 @@
-# Week 2 Lab Report
+# Lab Report 2
 
 ---
 

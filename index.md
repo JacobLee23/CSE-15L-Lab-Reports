@@ -1,4 +1,4 @@
 ## Reports
 
-- [Week 1](https://jacoblee23.github.io/CSE-15L-Lab-Reports/reports/week-1.html)
-- [Week 2](https://jacoblee23.github.io/CSE-15L-Lab-Reports/reports/week-2.html)
+- [Report 1](https://jacoblee23.github.io/CSE-15L-Lab-Reports/reports/report-1.html)
+- [Report 2](https://jacoblee23.github.io/CSE-15L-Lab-Reports/reports/report-2.html)
