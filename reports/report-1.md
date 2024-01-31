@@ -1,6 +1,6 @@
 # Lab Report 1
 
-![File Hierarchy](https://jacoblee23.github.io/CSE-15L-Lab-Reports/assets/report-1/file-hierarchy.png)
+![File Hierarchy](../assets/report-1/file-hierarchy.png)
 
 *Note: The content of this lab report will refer to the above file hierarchy.*
 
@@ -119,7 +119,7 @@ Hello.class  Hello.java  messages  README
 Hello.class  Hello.java  messages  README
 ```
 
-*Note: executing `$ ls ./` has the same behavior as executing `ls` and passing no arguments and is the default behavior of the `ls` command.*
+*Note: Executing `$ ls ./` has the same behavior as executing `ls` and passing no arguments and is the default behavior of the `ls` command.*
 
 ### One argument: File
 
