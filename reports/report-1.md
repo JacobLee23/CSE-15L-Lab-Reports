@@ -119,7 +119,7 @@ Hello.class  Hello.java  messages  README
 Hello.class  Hello.java  messages  README
 ```
 
-*Note: executing `$ ls ./` has the same behavior as executing `ls` and passing no arguments and is the default behavior of the `ls` command.*
+*Note: Executing `$ ls ./` has the same behavior as executing `ls` and passing no arguments and is the default behavior of the `ls` command.*
 
 ### One argument: File
 
