@@ -73,7 +73,7 @@ Server Started
 * **User**: Brenton Dunn
 * **URL**: `http://127.0.0.1:8050/add-message?s=You%20look%20very%20kickable&user=Brenton%20Dunn`
 
-[Message 1](https://jacoblee23.github.io/CSE-15L-Lab-Reports/assets/report-2/message-1.png)
+[Message 1](/assets/report-2/message-1.png)
 
 
 ## Message 2
@@ -82,7 +82,7 @@ Server Started
 * **User**: Joelle Chien
 * **URL**: `http://127.0.0.1:8050/add-message?s=Rocks%20can%20be%20a%20hobby.%20Throwing%20rocks%20is%20a%20fun%20past%20time.%20Especially%20at%20people.&user=Joelle%20Chien`
 
-[Message 2](https://jacoblee23.github.io/CSE-15L-Lab-Reports/assets/report-2/message-2.png)
+[Message 2](/assets/report-2/message-2.png)
 
 ---
 
