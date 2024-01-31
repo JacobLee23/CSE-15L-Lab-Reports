@@ -55,7 +55,7 @@ class ChatServer {
 }
 ```
 
-*ChatServer.java*
+*src/report-2/ChatServer.java*
 
 
 ## Compile/Run
