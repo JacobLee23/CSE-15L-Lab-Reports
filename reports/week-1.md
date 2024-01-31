@@ -205,7 +205,7 @@ t/Charset;
 java/nio/file/Files
 readStringB(Ljava/nio/file/Path;Ljava/nio/charset/Charset;)Ljava/lang/String;
  java/lang/SystemoutLjava/io/PrintStream;
-"#$ 
+"#$
 %&java/io/PrintStreamprintln(Ljava/lang/String;)V(HelloCodeLineNumberTablemain([Ljava/lang/String;)V
 Exceptions/java/io/IOException
 SourceFile
