@@ -1,6 +1,6 @@
 # Lab Report 1
 
-![File Hierarchy](https://jacoblee23.github.io/CSE-15L-Lab-Reports/assets/report-1/file-hierarchy.png)
+![File Hierarchy](../assets/report-1/file-hierarchy.png)
 
 *Note: The content of this lab report will refer to the above file hierarchy.*
 
