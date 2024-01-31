@@ -126,11 +126,32 @@ As a result of this call to `Handler::handleRequest`, the `Handler.messages` fie
 
 # SSH Keys
 
+![SSH Keys](../assets/report-2/ssh-login.png)
+
+## Private Key
+
+```bash
+$ realpath ~/.ssh/id_ed25519
+/c/Users/JLpyt/.ssh/id_ed25519
+```
+
+## Public Key
+
+```bash
+$ realpath ~/.ssh/id_ed25519.pub
+/c/Users/JLpyt/.ssh/id_ed25519.pub
+```
+
+## SSH Login
+
+```bash
+$ ssh jal128@ieng6.ucsc.edu
+...
+```
+
 ---
 
 # Conclusion
-
-
 
 ---
 
