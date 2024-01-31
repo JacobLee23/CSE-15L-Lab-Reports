@@ -18,6 +18,10 @@ class Handler implements URLHandler {
      */
     public String handleRequest(URI url) {
         switch (url.getPath()) {
+            case "/":
+                return String.format(
+                    "Message Count: %d", this.messages.size()
+                );
             case "/add-message":
                 HashMap<String, String> parameters = new HashMap<>();
                 for (String token: url.getQuery().split("&")) {
