@@ -159,7 +159,7 @@ $ ssh jal128@ieng6.ucsc.edu
 
 -- SNIPPED --
 
-[jal128@ieng6-201]:~:55$
+[jal128@ieng6-201]:~:55$ 
 ```
 
 ---
