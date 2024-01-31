@@ -2,7 +2,7 @@
 
 ![File Hierarchy](https://jacoblee23.github.io/CSE-15L-Lab-Reports/assets/week-1/file-hierarchy.png)
 
-*The content of this lab report will refer to the above file hierarchy.*
+*Note: The content of this lab report will refer to the above file hierarchy.*
 
 ***
 
@@ -10,57 +10,77 @@
 
 ### No arguments
 
+Executing the `cd` command from the root directory `~/` and passing no arguments appears to have no effect:
+
 ```bash
 [user@sahara ~]$ cd
 [user@sahara ~]$ 
 ```
 
-Initially, executing the `cd` command and passing no arguments appears to have no effect. However, executing the `cd` command from one of the descendent directories (e.g., `~/lecture1/`) provides more insight into the command behavior:
+However, executing the `cd` command from a non-root directory provides more valuable insight into the command behavior:
 
 ```bash
 [user@sahara ~/lecture1]$ cd
 [user@sahara ~]$ 
 ```
 
-When the `cd` command is executed and no arguments are passed, the command changes the current working directory to the root directory (`~/` in this case).
+```bash
+[user@sahara ~/lecture1/messages]$ cd
+[user@sahara ~]$
+```
+
+The above two examples demonstrate the default behavior of the `cd` command: executing the `cd` command and passing no arguments changes the working directory to the root directory `~/`.
 
 ### One argument: Directory
 
+Executing the `cd` command and passing the path to a directory changes the working directory to the specified directory. The below example changes the working directory from `~/` to `~/lecture1`:
+
 ```bash
+[user@sahara ~]$ pwd
+/home
 [user@sahara ~]$ cd lecture1/
-[user@sahara ~/lecture1]$ 
+[user@sahara ~/lecture1]$ pwd
+/home/lecture1
 ```
 
-Executing the `cd` command and passing the path to a directory will change the current working directory to the indicated directory.
+*Note: The `pwd` command returns the working directory of the terminal. In the above example, `pwd` is used to explicitly check the working directory of the terminal and changes in the working directory. Although the working directory is present in the command prompt, [explicit is better than implicit](https://peps.python.org/pep-0020/#the-zen-of-python)!*
 
-The argument passed to the `cd` command can be either absolute or relative. Note how the following commands demonstrate the same behavior:
+The directory path passed to the `cd` command can be either absolute or relative. Note how the following commands demonstrate the same behavior and both change the working directory from `~/lecture1/messages/` to `~/lecture1/`:
 
 *Absolute*:
 
 ```bash
-[user@sahara ~/lecture1/messages]$ cd ~/lecture/
-[user@sahara ~/lecture1]$ 
+[user@sahara ~/lecture1/messages]$ pwd
+/home/lecture1/messages
+[user@sahara ~/lecture1/messages]$ cd ~/lecture1/
+[user@sahara ~/lecture1]$ pwd
+/home/lecture1
 ```
 
 *Relative*:
 
 ```bash
+[user@sahara ~/lecture1/messages]$ pwd
+/home/lecture1/messages
 [user@sahara ~/lecture1/messages]$ cd ../
-[user@sahara ~/lecture1]$ 
+[user@sahara ~/lecture1]$ pwd
+/home/lecture1
 ```
 
 ### One argument: File
+
+Executing the `cd` command and passing the path to a file attempts to change the working directory to the specified file. This is an invalid operation since the working directory must be a directory, not a file, so the `cd` command throws an error:
 
 ```bash
 [user@sahara ~]$ cd lecture1/messages/en-us.txt
 bash: cd: lecture1/messages/en-us.txt: Not a directory
 ```
 
-Executing the `cd` command and passing the path to a file attempts to change the current working directory to a file, which is an invalid operation. Since the working directory must be a directory, not a file, the `cd` command throws an error.
-
 ## `ls`
 
 ### No arguments
+
+Executing the `ls` command and passing no arguments lists all the directories and files that are children of the working directory:
 
 ```bash
 [user@sahara ~]$ ls
@@ -73,22 +93,22 @@ Hello.class  Hello.java  messages  README
 en-gb.txt  en-us.txt  es-mx.txt  zh-cn.txt
 ```
 
-Executing the `ls` command and passing no arguments lists all the directories and files that are children of the current working directory. The returned items are listed in [ASCIIbetical order](https://www.cs.cmu.edu/~pattis/15-1XX/common/handouts/ascii.html), with one main exception: files/directories beginning with a letter are listed together, with those beginning with a capital letter preceding those beginning with a lowercase letter (as opposed to all files/directories beginning with a capital letter being listed before all files/directories beginning with a lowercase letter).
+*Note: The returned items are listed in a modified [ASCIIbetical order](https://www.cs.cmu.edu/~pattis/15-1XX/common/handouts/ascii.html). The specific modifications to the usual ASCII order is dependent on the language being used by the terminal.*
 
 ### One argument: Directory
+
+Executing the `ls` command and passing the path to a directory will list all the directories and files that are children of the specified path:
 
 ```bash
 [user@sahara ~]$ ls lecture1/messages/
 ```
 
-Executing the `ls` command and passing the path to a directory will list all the directories and files that are children of the indicated path.
-
-The argument passed to the `ls` command can be either absolute or relative. Note how the following commands demonstrate the same behavior:
+The argument passed to the `ls` command can be either absolute or relative. Note how the following commands demonstrate the same behavior and both list all the directories/files in `~/lecture1/`:
 
 *Absolute*:
 
 ```bash
-[user@sahara ~/lecture1/messages]$ ls ~/lecture/
+[user@sahara ~/lecture1/messages]$ ls ~/lecture1/
 Hello.class  Hello.java  messages  README
 ```
 
@@ -99,9 +119,11 @@ Hello.class  Hello.java  messages  README
 Hello.class  Hello.java  messages  README
 ```
 
-Note that executing `$ ls ./` has the same behavior as executing `ls` and passing no arguments and is the default behavior of the `ls` command.
+*Note: executing `$ ls ./` has the same behavior as executing `ls` and passing no arguments and is the default behavior of the `ls` command.*
 
 ### One argument: File
+
+Executing the `ls` command and passing the path to a file echoes the specified path. If the path passed to the `ls` command is absolute, then the returned path will also be absolute; if the path passed to the `ls` command is relative, then the returned path will also be relative:
 
 ```bash
 [user@sahara ~]$ ls lecture1/Hello.class
@@ -111,42 +133,51 @@ lecture1/messages/en-gb.txt
 [user@sahara ~]$ cd lecture1/
 [user@sahara ~/lecture1]$ ls messages/en-gb.txt
 messages/en-gb.txt
+[user@sahara ~/lecture1]$ cd messages/
+[user@sahara ~/lecture1/messages]$ ls ../README
+../README
 [user@sahara ~/lecture1/messages]$ ls ~/lecture1/Hello.class
 /home/lecture1/Hello.class
 ```
-
-Executing the `ls` command and passing the path to a file echoes the indicated path, returning an absolute path when an absolute path is given and a relative path when a relative path is given.
 
 ## `cat`
 
 ### No arguments
 
+Executing the `cat` command and passing no arguments appears to cause the command to hang indefinitely:
+
 ```bash
 [user@sahara ~]$ cat
 
 ```
 
-Initially, executing the `cat` command and passing no arguments appears to cause the command to hang indefinitely. However, when no arguments are passed, the `cat` reads from the standard input stream then outputs the contents of the standard input.
+In actuality, executing the `cat` command and passing no arguments reads from the standard input stream then outputs the contents of the standard input:
 
 ```bash
 [user@sahara ~]$ cat
 Hello World!    // User Input
 Hello World!    // Command Output
+CSE 15L         // User Input
+CSE 15L         // Command Output
 
 ```
 
-The `cat` command continues to read from the standard input and output its contents until the user terminates the command (<kbd>Ctrl</kbd><kbd>C</kbd>/<kbd>Cmd</kbd><kbd>C</kbd>).
+After executing the `cat` command, the user is able to type text into the terminal. Then, when the user presses <kbd>enter</kbd>/<kbd>return</kbd>, the terminal reads the text the user inputted and echoes it, outputting the same string of text to the terminal.
+
+The `cat` command continues to read from the standard input and output its contents until the user terminates the command with <kbd>ctrl</kbd>+<kbd>C</kbd>/<kbd>cmd</kbd>+<kbd>C</kbd>.
 
 ### One argument: Directory
+
+Executing the `cat` command and passing the path to a directory attempts to read the contents of the specified directory. This is an invalid operation, so the `cat` command throws an error:
 
 ```bash
 [user@sahara ~]$ cat lecture1/
 cat: lecture1/: Is a directory
 ```
 
-Executing the `cat` command and passing the path to a directory attempts to read the contents of the directory, which is an invalid operation, and throws an error.
-
 ### One argument: File
+
+Executing the `cat` command and passing the path to a file prints the contents of the specified file.
 
 ```bash
 [user@sahara ~]$ cat lecture1/README
@@ -156,7 +187,7 @@ javac Hello.java
 java Hello messages/en-us.txt
 ```
 
-Executing the `cat` command and passing the path to a file prints the contents of the file. This works with all files, including binary files:
+The `cat` command functions whether given a plaintext or binary file. When the path to a plaintext file is passed, the text contents of the file are returned; when the path to binary file is passed, the binary contents of the file are returned:
 
 ```bash
 [user@sahara ~]$ cat lecture1/Hello.class
