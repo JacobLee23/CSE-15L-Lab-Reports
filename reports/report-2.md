@@ -143,14 +143,17 @@ The absolute path to the private key for the SSH key for logging into `ieng6` is
 ## Public Key
 
 ```bash
-$ ls ~/.ssh/
-id_ed25519  id_ed25519.pub  known_hosts
+$ ssh jal128@ieng6.ucsd.edu
 
-$ ls ~/.ssh/id_ed25519.pub
-/c/Users/JLpyt/.ssh/id_ed25519.pub
+-- SNIPPED --
+
+[jal128@ieng6-201]:~:135$ ls .ssh/
+authorized_keys
+[jal128@ieng6-201]:~:136$ ls .ssh/authorized_keys
+.ssh/authorized_keys
 ```
 
-The absolute path to the public key for the SSH key for logging into `ieng6` is `~/.ssh/id_ed25519.pub` (or `C:\Users\JLpyt\.ssh\id_ed25519.pub`).
+The absolute path to the public key for the SSH key for logging into `ieng6` is `.ssh/authorized_keys`.
 
 ## SSH Login
 
