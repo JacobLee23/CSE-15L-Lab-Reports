@@ -4,7 +4,7 @@
 
 # Chat Server
 
-[src/report-2/ChatServer.java](https://github.com/JacobLee23/CSE-15L-Lab-Reports/blob/30a2430c27003af4c94e9cd175ba1d00e521d1c9/src/report-2/ChatServer.java)
+[src/report-2/ChatServer.java](https://github.com/JacobLee23/CSE-15L-Lab-Reports/blob/30a2430c27003af4c94e9cd175ba1d00e521d1c9/src/report-2/ChatServer.java#L1-L48)
 
 ## Compile/Run
 
