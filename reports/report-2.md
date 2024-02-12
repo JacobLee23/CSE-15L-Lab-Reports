@@ -126,9 +126,10 @@ As a result of this call to `Handler::handleRequest`, the `Handler.messages` fie
 
 # SSH Keys
 
-![SSH Keys](../assets/report-2/ssh-login.png)
 
 ## Private Key
+
+![SSH Key: Private](../assets/report-2/ssh-key-private.png)
 
 ```bash
 $ ls ~/.ssh/
@@ -141,6 +142,8 @@ $ ls ~/.ssh/id_ed25519
 The absolute path to the private key for the SSH key for logging into `ieng6` is `~/.ssh/id_ed25519` (or `C:\Users\JLpyt\.ssh\id_ed25519`).
 
 ## Public Key
+
+![SSH Key: Public](../assets/report-2/ssh-key-public.png)
 
 ```bash
 $ ssh jal128@ieng6.ucsd.edu
@@ -156,6 +159,8 @@ authorized_keys
 The absolute path to the public key for the SSH key for logging into `ieng6` is `.ssh/authorized_keys`.
 
 ## SSH Login
+
+![SSH Login](../assets/report-2/ssh-login.png)
 
 ```bash
 $ ssh jal128@ieng6.ucsc.edu
