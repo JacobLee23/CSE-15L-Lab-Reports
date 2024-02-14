@@ -1,8 +1,16 @@
+/**
+ * 
+ */
+
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+
+/**
+ * 
+ */
 public class FileExample {
 
   /*
@@ -38,16 +46,25 @@ public class FileExample {
 
   */
 
+  /**
+   * 
+   * @param start
+   * @return
+   * @throws IOException
+   */
 	static List<File> getFiles(File start) throws IOException {
-	  File f = start;
-	  List<File> result = new ArrayList<>();
-	  result.add(start);
-	  if(f.isDirectory()) {
-	    File[] paths = f.listFiles();
-	    for(File subFile: paths) {
-	      result.add(subFile);
-	    }
-	  }
+    File file = start;
+    List<File> result = new ArrayList<>();
+
+    result.add(file);
+
+    if (file.isDirectory()) {
+      File[] paths = file.listFiles();
+      for (File subFile: paths) {
+        result.add(subFile);
+      }
+    }
+    
 	  return result;
 	}
 }
