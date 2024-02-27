@@ -307,7 +307,7 @@ PATTERN is, by default, a basic regular expression (BRE).
 Example: grep -i 'hello world' menu.h main.c
 ```
 
-The `grep` command searches for a text pattern `PATTERN` in a file `FILE`. The default behavior of the `grep` command uses the `-G` option, which interpets `PATTERN` as a basic regular expression when searching for `PATTERN` in `FILE`, where metacharacters (e.g., `.`, `*`, `?`) are treated according to their literal role instead of their meta role.
+The `grep` command searches for a text pattern `PATTERN` in a file `FILE`. The default behavior of the `grep` command interpets `PATTERN` as a basic regular expression when searching for `PATTERN` in `FILE`, where metacharacters (e.g., `.`, `*`, `?`) are treated according to their literal role instead of their meta role.
 
 For the below examples, `filename.txt` has the corresponding contents:
 
@@ -357,7 +357,7 @@ foo
 eggs
 ```
 
-Source: [GNU Grep 3.11 | 2.4 `grep` Programs](https://www.gnu.org/software/grep/manual/grep.html#grep-Programs-1)
+Source: [GNU Grep 3.11 : 2.4 `grep` Programs](https://www.gnu.org/software/grep/manual/grep.html#grep-Programs-1)
 
 ## `-F`/`--fixed-strings`
 
@@ -391,7 +391,7 @@ baz
 bacon
 ```
 
-Source: [GNU Grep 3.11 | 2.4 `grep` Programs](https://www.gnu.org/software/grep/manual/grep.html#grep-Programs-1)
+Source: [GNU Grep 3.11 : 2.4 `grep` Programs](https://www.gnu.org/software/grep/manual/grep.html#grep-Programs-1)
 
 ## `-f`/`--file=FILE`
 
@@ -417,7 +417,7 @@ foo
 eggs
 ```
 
-Source: [GNU Grep 3.11 | 2.1.2 Matching Control](https://www.gnu.org/software/grep/manual/grep.html#Matching-Control-1)
+Source: [GNU Grep 3.11 : 2.1.2 Matching Control](https://www.gnu.org/software/grep/manual/grep.html#Matching-Control-1)
 
 ## `-i`/`--ignore-case`
 
@@ -431,7 +431,7 @@ $ grep -i FOO filename.txt | cat
 foo
 ```
 
-Source: [GNU Grep 3.11 | 2.1.2 Matching Control](https://www.gnu.org/software/grep/manual/grep.html#Matching-Control-1)
+Source: [GNU Grep 3.11 : 2.1.2 Matching Control](https://www.gnu.org/software/grep/manual/grep.html#Matching-Control-1)
 
 ## Citations
 
