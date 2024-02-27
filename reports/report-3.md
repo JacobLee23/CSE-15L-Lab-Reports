@@ -194,53 +194,15 @@ public class LinkedListTests {
 ## Symptoms
 
 ```bash
-$ javac -cp ".;lib/hamcrest-core-1.3.jar;lib/junit-4.13.2.jar" LinkedListTests.java
-Note: LinkedListTests.java uses unchecked or unsafe operations.
-Note: Recompile with -Xlint:unchecked for details.
+$ javac -cp ".;lib/hamcrest-core-1.3.jar;lib/junit-4.13.2.jar" *.java
+...
 
-$ java -cp ".;lib/junit-4.13.2.jar;lib/hamcrest-core-1.3.jar" org.junit.runner.JUnitCore  LinkedListTests
-JUnit version 4.13.2
-.....E.
-Time: 49.549
-There was 1 failure:
-1) testAppend(LinkedListTests)
-java.lang.OutOfMemoryError: Java heap space
-        at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-        at java.base/java.lang.reflect.Method.invoke(Method.java:577)
-        at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
-        at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-        at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
-        at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
-        at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
-        at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
-        at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
-        at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
-        at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
-        at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
-        at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
-        at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
-        at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
-        at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
-        at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
-        at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
-        at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
-        at org.junit.runners.Suite.runChild(Suite.java:128)
-        at org.junit.runners.Suite.runChild(Suite.java:27)
-        at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
-        at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
-        at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
-        at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
-        at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
-        at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
-        at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
-        at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
-        at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
-        at org.junit.runner.JUnitCore.runMain(JUnitCore.java:77)
-        at org.junit.runner.JUnitCore.main(JUnitCore.java:36)
-
-FAILURES!!!
-Tests run: 6,  Failures: 1
+$ java -cp ".;lib/junit-4.13.2.jar;lib/hamcrest-core-1.3.jar" org.junit.runner.JUnitCore LinkedListTests
+...
 ```
+
+![Test Compile](../assets/report-3/test-compile.png)
+![Test Run](../assets/report-3/test-run.png)
 
 When the `testAppend` method in [`src/report-3/LinkedListTests.java`](../src/report-3/LinkedListTests.java) is run, calling the `LinkedList.append` method, the Java Virtual Machine throws a `java.lang.OutOfMemoryError` indicating that the JVM ran out of heap space.
 
