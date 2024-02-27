@@ -325,7 +325,7 @@ bacon
 
 ## `-E`/`--extended-regexp`
 
-The `-E` options interprets `PATTERN` as an exetended regular expression when searching for `PATTERN` in `FILE`. Metacharacters are treated according to their meta role instead of their literal role.
+Passing the `-E` flag configures `grep` to interpret `PATTERN` as an extended regular expression when searching for `PATTERN` in `FILE`, where metacharacters are treated according to their meta role instead of their literal role:
 
 ```bash
 $ grep -E "\w{,4}" filename.txt | cat
@@ -361,7 +361,7 @@ Source: [GNU Grep 3.11 | 2.4 `grep` Programs](https://www.gnu.org/software/grep/
 
 ## `-F`/`--fixed-strings`
 
-The `-F` options interprets `PATTERN` as a literal string when searching for `PATTERN` in `FILE`. Metacharacters are treated according to their literal role instead of their meta role.
+Passing the `-F` flag configures `grep` to interpret `PATTERN` as a literal string when searching for `PATTERN` in `FILE`; metacharacters are treated according to their meta role instead of their literal role:
 
 ```bash
 $ grep -F a filename.txt | cat
@@ -395,7 +395,7 @@ Source: [GNU Grep 3.11 | 2.4 `grep` Programs](https://www.gnu.org/software/grep/
 
 ## `-f`/`--file=FILE`
 
-Passing `-f` and the name of a file causes `grep` to read a regular expression pattern from a file and use it to parse `FILE`:
+Passing the `-f` flag followed by the name of a file configures `grep` to use the pattern contained in the specified file to parse `FILE`:
 
 ```bash
 $ cat regex1.txt
@@ -421,7 +421,7 @@ Source: [GNU Grep 3.11 | 2.1.2 Matching Control](https://www.gnu.org/software/gr
 
 ## `-i`/`--ignore-case`
 
-Passing `-i` causes `grep` to ignore any casing when searching for `PATTERN` in `FILE`:
+Passing the `-i` flag configures `grep` to ignore any casing when searching for `PATTERN` in `FILE`:
 
 ```bash
 $ grep -i foo filename.txt | cat
