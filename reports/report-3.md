@@ -194,53 +194,15 @@ public class LinkedListTests {
 ## Symptoms
 
 ```bash
-$ javac -cp ".;lib/hamcrest-core-1.3.jar;lib/junit-4.13.2.jar" LinkedListTests.java
-Note: LinkedListTests.java uses unchecked or unsafe operations.
-Note: Recompile with -Xlint:unchecked for details.
+$ javac -cp ".;lib/hamcrest-core-1.3.jar;lib/junit-4.13.2.jar" *.java
+...
 
-$ java -cp ".;lib/junit-4.13.2.jar;lib/hamcrest-core-1.3.jar" org.junit.runner.JUnitCore  LinkedListTests
-JUnit version 4.13.2
-.....E.
-Time: 49.549
-There was 1 failure:
-1) testAppend(LinkedListTests)
-java.lang.OutOfMemoryError: Java heap space
-        at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-        at java.base/java.lang.reflect.Method.invoke(Method.java:577)
-        at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
-        at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-        at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
-        at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
-        at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
-        at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
-        at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
-        at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
-        at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
-        at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
-        at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
-        at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
-        at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
-        at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
-        at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
-        at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
-        at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
-        at org.junit.runners.Suite.runChild(Suite.java:128)
-        at org.junit.runners.Suite.runChild(Suite.java:27)
-        at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
-        at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
-        at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
-        at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
-        at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
-        at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
-        at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
-        at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
-        at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
-        at org.junit.runner.JUnitCore.runMain(JUnitCore.java:77)
-        at org.junit.runner.JUnitCore.main(JUnitCore.java:36)
-
-FAILURES!!!
-Tests run: 6,  Failures: 1
+$ java -cp ".;lib/junit-4.13.2.jar;lib/hamcrest-core-1.3.jar" org.junit.runner.JUnitCore LinkedListTests
+...
 ```
+
+![Test Compile](../assets/report-3/test-compile.png)
+![Test Run](../assets/report-3/test-run.png)
 
 When the `testAppend` method in [`src/report-3/LinkedListTests.java`](../src/report-3/LinkedListTests.java) is run, calling the `LinkedList.append` method, the Java Virtual Machine throws a `java.lang.OutOfMemoryError` indicating that the JVM ran out of heap space.
 
@@ -335,6 +297,8 @@ public void append(int value) {
 
 # The `grep` Command
 
+Source: [`grep` Documentation](https://www.gnu.org/software/grep/manual/grep.html)
+
 ```bash
 $ grep --help
 Usage: grep [OPTION]... PATTERN [FILE]...
@@ -343,11 +307,12 @@ PATTERN is, by default, a basic regular expression (BRE).
 Example: grep -i 'hello world' menu.h main.c
 ```
 
-The `grep` command searches for a text pattern `PATTERN` in a file `FILE`. The default behavior of the `grep` command uses the `-G` option, which interpets `PATTERN` as a basic regular expression when searching for `PATTERN` in `FILE`. Metacharacters (e.g., `.`, `*`, `?`) are treated according to their literal role instead of their meta role.
+The `grep` command searches for a text pattern `PATTERN` in a file `FILE`. The default behavior of the `grep` command interpets `PATTERN` as a basic regular expression when searching for `PATTERN` in `FILE`, where metacharacters (e.g., `.`, `*`, `?`) are treated according to their literal role instead of their meta role.
 
-For the following examples, let `filename.txt` contain the following:
+For the below examples, `filename.txt` has the corresponding contents:
 
-```
+```bash
+$ cat filename.txt
 foo
 bar
 baz
@@ -355,134 +320,122 @@ spam
 eggs
 bacon
 ```
+
+*Note: the `cat` command is used in the below examples to print the output of `grep` to `STDOUT`.*
 
 ## `-E`/`--extended-regexp`
 
-The `-E` options interprets `PATTERN` as an exetended regular expression when searching for `PATTERN` in `FILE`. Metacharacters are treated according to their meta role instead of their literal role.
-
-Command:
+Passing the `-E` flag configures `grep` to interpret `PATTERN` as an extended regular expression when searching for `PATTERN` in `FILE`, where metacharacters are treated according to their meta role instead of their literal role:
 
 ```bash
-$ grep -E \w{,4} filename.txt
-```
-
-Output:
-
-```
+$ grep -E "\w{,4}" filename.txt | cat
 foo
 bar
 baz
 spam
 eggs
+bacon
+
+$ grep -E "(\w)\1" filename.txt | cat
+foo
+eggs
 ```
 
-Command:
+The `egrep` command is synonymous to `grep -E`:
 
 ```bash
-$ grep -E \w{4,} filename.txt
-```
-
-Output:
-
-```
+$ egrep "\w{,4}" filename.txt | cat
+foo
+bar
+baz
 spam
 eggs
 bacon
+
+$ egrep "(\w)\1" filename.txt | cat
+foo
+eggs
 ```
+
+Source: [GNU Grep 3.11 : 2.4 `grep` Programs](https://www.gnu.org/software/grep/manual/grep.html#grep-Programs-1)
 
 ## `-F`/`--fixed-strings`
 
-The `-F` options interprets `PATTERN` as a literal string when searching for `PATTERN` in `FILE`. Metacharacters are treated according to their literal role instead of their meta role.
-
-Command:
+Passing the `-F` flag configures `grep` to interpret `PATTERN` as a literal string when searching for `PATTERN` in `FILE`; metacharacters are treated according to their meta role instead of their literal role:
 
 ```bash
-$ grep -F spam filename.txt
-```
-
-Output:
-
-```
+$ grep -F a filename.txt | cat
+bar
+baz
 spam
-```
+bacon
 
-Command:
-
-```bash
-$ grep -F bacon filename.txt
-```
-
-Output:
-
-```
+$ grep -F b filename.txt | cat
+bar
+baz
 bacon
 ```
 
+The `fgrep` command is synonymous to `grep -F`:
+
+```bash
+$ fgrep a filename.txt | cat
+bar
+baz
+spam
+bacon
+
+$ fgrep b filename.txt | cat
+bar
+baz
+bacon
+```
+
+Source: [GNU Grep 3.11 : 2.4 `grep` Programs](https://www.gnu.org/software/grep/manual/grep.html#grep-Programs-1)
+
 ## `-f`/`--file=FILE`
 
-Passing `-f` and the name of a file causes `grep` to read a regular expression pattern from a file and use it to parse `FILE`:
-
-`regex.txt`:
-
-```
-foo
-```
-
-Command:
+Passing the `-f` flag followed by the name of a file configures `grep` to use the pattern contained in the specified file to parse `FILE`:
 
 ```bash
-$ grep -f regex.txt filename.txt
-```
+$ cat regex1.txt
+\w{,4}
 
-Output:
-```
+$ grep -E -f regex1.txt filename.txt | cat
 foo
-```
+bar
+baz
+spam
+eggs
+bacon
 
-`regex.txt`:
+$ cat regex2.txt
+(\w)\1
 
-```
+$ grep -E -f regex2.txt filename.txt | cat
+foo
 eggs
 ```
 
-Command:
-
-```bash
-$ grep -f regex.txt filename.txt
-```
-
-Output:
-```
-eggs
-```
+Source: [GNU Grep 3.11 : 2.1.2 Matching Control](https://www.gnu.org/software/grep/manual/grep.html#Matching-Control-1)
 
 ## `-i`/`--ignore-case`
 
-Passing `-i` causes `grep` to ignore any casing when searching for `PATTERN` in `FILE`:
-
-Command:
+Passing the `-i` flag configures `grep` to ignore any casing when searching for `PATTERN` in `FILE`:
 
 ```bash
-$ grep -i foo filename.txt
-```
+$ grep -i foo filename.txt | cat
+foo
 
-Output:
-
-```
+$ grep -i FOO filename.txt | cat
 foo
 ```
 
-Command:
+Source: [GNU Grep 3.11 : 2.1.2 Matching Control](https://www.gnu.org/software/grep/manual/grep.html#Matching-Control-1)
 
-```bash
-$ grep -i FOO filename.txt
-```
+## Citations
 
-Output:
-
-```
-foo
-```
+grep. GNU Grep 3.11. (n.d.). https://www.gnu.org/software/grep/manual/grep.html 
 
 ---
 
