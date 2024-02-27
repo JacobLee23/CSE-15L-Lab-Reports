@@ -305,11 +305,12 @@ PATTERN is, by default, a basic regular expression (BRE).
 Example: grep -i 'hello world' menu.h main.c
 ```
 
-The `grep` command searches for a text pattern `PATTERN` in a file `FILE`. The default behavior of the `grep` command uses the `-G` option, which interpets `PATTERN` as a basic regular expression when searching for `PATTERN` in `FILE`. Metacharacters (e.g., `.`, `*`, `?`) are treated according to their literal role instead of their meta role.
+The `grep` command searches for a text pattern `PATTERN` in a file `FILE`. The default behavior of the `grep` command uses the `-G` option, which interpets `PATTERN` as a basic regular expression when searching for `PATTERN` in `FILE`, where metacharacters (e.g., `.`, `*`, `?`) are treated according to their literal role instead of their meta role.
 
-For the following examples, let `filename.txt` contain the following:
+For the below examples, `filename.txt` has the corresponding contents:
 
-```
+```bash
+$ cat filename.txt
 foo
 bar
 baz
@@ -317,66 +318,72 @@ spam
 eggs
 bacon
 ```
+
+*Note: the `cat` command is used in the below examples to print the output of `grep` to `STDOUT`.*
 
 ## `-E`/`--extended-regexp`
 
 The `-E` options interprets `PATTERN` as an exetended regular expression when searching for `PATTERN` in `FILE`. Metacharacters are treated according to their meta role instead of their literal role.
 
-Command:
-
 ```bash
-$ grep -E \w{,4} filename.txt
-```
-
-Output:
-
-```
+$ grep -E "\w{,4}" filename.txt | cat
 foo
 bar
 baz
 spam
 eggs
+bacon
+
+$ grep -E "(\w)\1" filename.txt | cat
+foo
+eggs
 ```
 
-Command:
+The `egrep` command is synonymous to `grep -E`:
 
 ```bash
-$ grep -E \w{4,} filename.txt
-```
-
-Output:
-
-```
+$ egrep "\w{,4}" filename.txt | cat
+foo
+bar
+baz
 spam
 eggs
 bacon
+
+$ egrep "(\w)\1" filename.txt | cat
+foo
+eggs
 ```
 
 ## `-F`/`--fixed-strings`
 
 The `-F` options interprets `PATTERN` as a literal string when searching for `PATTERN` in `FILE`. Metacharacters are treated according to their literal role instead of their meta role.
 
-Command:
-
 ```bash
-$ grep -F spam filename.txt
-```
-
-Output:
-
-```
+$ grep -F a filename.txt | cat
+bar
+baz
 spam
+bacon
+
+$ grep -F b filename.txt | cat
+bar
+baz
+bacon
 ```
 
-Command:
+The `fgrep` command is synonymous to `grep -F`:
 
 ```bash
-$ grep -F bacon filename.txt
-```
+$ fgrep a filename.txt | cat
+bar
+baz
+spam
+bacon
 
-Output:
-
-```
+$ fgrep b filename.txt | cat
+bar
+baz
 bacon
 ```
 
@@ -387,34 +394,26 @@ Passing `-f` and the name of a file causes `grep` to read a regular expression p
 `regex.txt`:
 
 ```
-foo
+\w{,4}
 ```
-
-Command:
 
 ```bash
-$ grep -f regex.txt filename.txt
-```
+$ cat regex1.txt
+\w{,4}
 
-Output:
-```
+$ grep -E -f regex1.txt filename.txt | cat
 foo
-```
-
-`regex.txt`:
-
-```
+bar
+baz
+spam
 eggs
-```
+bacon
 
-Command:
+$ cat regex2.txt
+(\w)\1
 
-```bash
-$ grep -f regex.txt filename.txt
-```
-
-Output:
-```
+$ grep -E -f regex2.txt filename.txt | cat
+foo
 eggs
 ```
 
@@ -422,27 +421,11 @@ eggs
 
 Passing `-i` causes `grep` to ignore any casing when searching for `PATTERN` in `FILE`:
 
-Command:
-
 ```bash
-$ grep -i foo filename.txt
-```
-
-Output:
-
-```
+$ grep -i foo filename.txt | cat
 foo
-```
 
-Command:
-
-```bash
-$ grep -i FOO filename.txt
-```
-
-Output:
-
-```
+$ grep -i FOO filename.txt | cat
 foo
 ```
 
