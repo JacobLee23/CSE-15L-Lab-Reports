@@ -297,6 +297,8 @@ public void append(int value) {
 
 # The `grep` Command
 
+Source: [`grep` Documentation](https://www.gnu.org/software/grep/manual/grep.html)
+
 ```bash
 $ grep --help
 Usage: grep [OPTION]... PATTERN [FILE]...
@@ -355,6 +357,8 @@ foo
 eggs
 ```
 
+Source: [GNU Grep 3.11 | 2.4 `grep` Programs](https://www.gnu.org/software/grep/manual/grep.html#grep-Programs-1)
+
 ## `-F`/`--fixed-strings`
 
 The `-F` options interprets `PATTERN` as a literal string when searching for `PATTERN` in `FILE`. Metacharacters are treated according to their literal role instead of their meta role.
@@ -387,15 +391,11 @@ baz
 bacon
 ```
 
+Source: [GNU Grep 3.11 | 2.4 `grep` Programs](https://www.gnu.org/software/grep/manual/grep.html#grep-Programs-1)
+
 ## `-f`/`--file=FILE`
 
 Passing `-f` and the name of a file causes `grep` to read a regular expression pattern from a file and use it to parse `FILE`:
-
-`regex.txt`:
-
-```
-\w{,4}
-```
 
 ```bash
 $ cat regex1.txt
@@ -417,6 +417,8 @@ foo
 eggs
 ```
 
+Source: [GNU Grep 3.11 | 2.1.2 Matching Control](https://www.gnu.org/software/grep/manual/grep.html#Matching-Control-1)
+
 ## `-i`/`--ignore-case`
 
 Passing `-i` causes `grep` to ignore any casing when searching for `PATTERN` in `FILE`:
@@ -428,6 +430,12 @@ foo
 $ grep -i FOO filename.txt | cat
 foo
 ```
+
+Source: [GNU Grep 3.11 | 2.1.2 Matching Control](https://www.gnu.org/software/grep/manual/grep.html#Matching-Control-1)
+
+## Citations
+
+grep. GNU Grep 3.11. (n.d.). https://www.gnu.org/software/grep/manual/grep.html 
 
 ---
 
