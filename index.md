@@ -1,4 +1,5 @@
 ## Reports
 
-- [Report 1](https://jacoblee23.github.io/CSE-15L-Lab-Reports/reports/report-1.html)
-- [Report 2](https://jacoblee23.github.io/CSE-15L-Lab-Reports/reports/report-2.html)
+- [Report 1](./reports/report-1.html)
+- [Report 2](./reports/report-2.html)
+- [Report 3](./reports/report-3.html)
