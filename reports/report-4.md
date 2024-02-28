@@ -8,26 +8,26 @@
 
 ![Step 4](../assets/report-4/step-4.png)
 
-`$ ssh jal128@ieng6.ucsd.edu`: Logs into the Ieng6 remote machine with the credential `jal128@ieng6.ucsd.edu`.
+`ssh jal128@ieng6.ucsd.edu`: Logs into the Ieng6 remote machine with the credential `jal128@ieng6.ucsd.edu`.
 
 ## Step 5
 
 ![Step 5](../assets/report-4/step-5.png)
 
-`$git clone git@github.com:JacobLee23/lab-7.git`: Clones the `JacobLee23/lab-7.git` repository into a new directory via SSH.
+`git clone git@github.com:JacobLee23/lab-7.git`: Clones the `JacobLee23/lab-7.git` repository into a new directory via SSH.
 
 ## Step 6
 
 ![Step 6](../assets/report-4/step-6.png)
 
-`$ bash test.sh`: Executes the `test.sh` shell script using the `bash` command interpreter.
+`bash test.sh`: Executes the `test.sh` shell script using the `bash` command interpreter.
 
 ## Step 7
 
 ![Step 7a](../assets/report-4/step-7a.png)
 ![Step 7b](../assets/report-4/step-7b.png)
 
-`$ vim ListExamplesTests.java`: Opens *ListExamplesTests.java* with `vim` in normal mode.
+`vim ListExamplesTests.java`: Opens *ListExamplesTests.java* with `vim` in normal mode.
 
 ![Step 7c](../assets/report-4/step-7c.png)
 
@@ -52,11 +52,11 @@
 
 ![Step 9b](../assets/report-4/step-9a.png)
 
-`$ git commit -a -m <message>`: Creates a new commit containing all changed files (`-a`), adding the commit to the local repository log under the commit message `<message>` (`-m <message>`).
+`git commit -a -m <message>`: Creates a new commit containing all changed files (`-a`), adding the commit to the local repository log under the commit message `<message>` (`-m <message>`).
 
 ![Step 9b](../assets/report-4/step-9b.png)
 
-`$ git push`: Updates the commit record of the remote repository with the commit record of the local repository.
+`git push`: Updates the commit record of the remote repository with the commit record of the local repository.
 
 ---
 
