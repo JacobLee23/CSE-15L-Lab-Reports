@@ -16,6 +16,8 @@
 
 `git clone git@github.com:JacobLee23/lab-7.git`: Clones the `JacobLee23/lab-7.git` repository into a new directory via SSH.
 
+`cd lab-7`: Changes the working directory from `~/` to `lab-7/`.
+
 ## Step 6
 
 ![Step 6](../assets/report-4/step-6.png)
