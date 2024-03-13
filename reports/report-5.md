@@ -4,8 +4,6 @@
 
 ## Debugging
 
----
-
 ### Original Post
 
 I am trying to implement a method, `ListExamples.merge` (see `ListExamples.java`), that takes as parameters two `List` objects, each of which is a sorted list of `String` objects, and merges the two lists, returning a `List` object containing a sorted list of `String` objects.
@@ -94,25 +92,85 @@ public class ListTests {
         this.helpMerge(this.input0, this.input4, this.input4);
         this.helpMerge(this.input0, this.input5, this.input5);
 
-        this.helpMerge(this.input1, this.input1, new String[] {"", "", "\t", "\t", "\n", "\n", " ", " "});
-        this.helpMerge(this.input1, this.input2, new String[] {"", "\t", "\n", " ", "a", "b", "c", "d", "e"});
-        this.helpMerge(this.input1, this.input3, new String[] {"", "\t", "\n", " ", "0", "1", "2", "3", "4", "5"});
-        this.helpMerge(this.input1, this.input4, new String[] {"", "\t", "\n", " ", "AA", "Aa", "aA", "aa"});
-        this.helpMerge(this.input1, this.input5, new String[] {"", "\t", "\n", " ", "1", "12", "123", "a", "ab", "abc"});
+        this.helpMerge(
+            this.input1, this.input1, new String[] {
+                "", "", "\t", "\t", "\n", "\n", " ", " "
+            }
+        );
+        this.helpMerge(
+            this.input1, this.input2, new String[] {
+                "", "\t", "\n", " ", "a", "b", "c", "d", "e"
+            }
+        );
+        this.helpMerge(
+            this.input1, this.input3, new String[] {
+                "", "\t", "\n", " ", "0", "1", "2", "3", "4", "5"
+            }
+        );
+        this.helpMerge(
+            this.input1, this.input4, new String[] {
+                "", "\t", "\n", " ", "AA", "Aa", "aA", "aa"
+            }
+        );
+        this.helpMerge(
+            this.input1, this.input5, new String[] {
+                "", "\t", "\n", " ", "1", "12", "123", "a", "ab", "abc"
+            }
+        );
 
-        this.helpMerge(this.input2, this.input2, new String[] {"a", "a", "b", "b", "c", "c", "d", "d", "e", "e"});
-        this.helpMerge(this.input2, this.input3, new String[] {"0", "1", "2", "3", "4", "5", "a", "b", "c", "d", "e"});
-        this.helpMerge(this.input2, this.input4, new String[] {"AA", "Aa", "a", "aA", "aa", "b", "c", "d", "e"});
-        this.helpMerge(this.input2, this.input5, new String[] {"1", "12", "123", "a", "a", "ab", "abc", "b", "c", "d", "e"});
+        this.helpMerge(
+            this.input2, this.input2, new String[] {
+                "a", "a", "b", "b", "c", "c", "d", "d", "e", "e"
+            }
+        );
+        this.helpMerge(
+            this.input2, this.input3, new String[] {
+                "0", "1", "2", "3", "4", "5", "a", "b", "c", "d", "e"
+            }
+        );
+        this.helpMerge(
+            this.input2, this.input4, new String[] {
+                "AA", "Aa", "a", "aA", "aa", "b", "c", "d", "e"
+            }
+        );
+        this.helpMerge(
+            this.input2, this.input5, new String[] {
+                "1", "12", "123", "a", "a", "ab", "abc", "b", "c", "d", "e"
+            }
+        );
 
-        this.helpMerge(this.input3, this.input3, new String[] {"0", "0", "1", "1", "2", "2", "3", "3", "4", "4", "5", "5"});
-        this.helpMerge(this.input3, this.input4, new String[] {"0", "1", "2", "3", "4", "5", "AA", "Aa", "aA", "aa"});
-        this.helpMerge(this.input3, this.input5, new String[] {"0", "1", "1", "12", "123", "2", "3", "4", "5", "a", "ab", "abc"});
+        this.helpMerge(
+            this.input3, this.input3, new String[] {
+                "0", "0", "1", "1", "2", "2", "3", "3", "4", "4", "5", "5"
+            }
+        );
+        this.helpMerge(
+            this.input3, this.input4, new String[] {
+                "0", "1", "2", "3", "4", "5", "AA", "Aa", "aA", "aa"
+            }
+        );
+        this.helpMerge(
+            this.input3, this.input5, new String[] {
+                "0", "1", "1", "12", "123", "2", "3", "4", "5", "a", "ab", "abc"
+            }
+        );
 
-        this.helpMerge(this.input4, this.input4, new String[] {"AA", "AA", "Aa", "Aa", "aA", "aA", "aa", "aa"});
-        this.helpMerge(this.input4, this.input5, new String[] {"1", "12", "123", "AA", "Aa", "a", "aA", "aa", "ab", "abc"});
+        this.helpMerge(
+            this.input4, this.input4, new String[] {
+                "AA", "AA", "Aa", "Aa", "aA", "aA", "aa", "aa"
+            }
+        );
+        this.helpMerge(
+            this.input4, this.input5, new String[] {
+                "1", "12", "123", "AA", "Aa", "a", "aA", "aa", "ab", "abc"
+            }
+        );
 
-        this.helpMerge(this.input5, this.input5, new String[] {"1", "1", "12", "12", "123", "123", "a", "a", "ab", "ab", "abc", "abc"});
+        this.helpMerge(
+            this.input5, this.input5, new String[] {
+                "1", "1", "12", "12", "123", "123", "a", "a", "ab", "ab", "abc", "abc"
+            }
+        );
     }
 
     public void helpMerge(String[] arrInput1, String[] arrInput2, String[] arrOutput) {
@@ -148,17 +206,13 @@ javac -cp ".;lib/hamcrest-core-1.3.jar;lib/junit-4.13.2.jar" *.java
 java -cp ".;lib/junit-4.13.2.jar;lib/hamcrest-core-1.3.jar" org.junit.runner.JUnitCore ListTests
 ```
 
----
-
 ### TA Response
 
-I noticed that when incrementing `index1` and `index2` you use the `++` operator (`++index1` and `++index2`, respectively). Remember the is a difference between pre-incrementation (`++x`) and post-incrementation (`x++`). What if instead of using the `++` operator you increment `index1` and `index2` separate from your calls to `result.add` using the `+=` operator? When doing so, should incrementation precede or succeed a call to `result.add`?
-
----
+I noticed that when incrementing `index1` and `index2` you use the `++` operator (`++index1` and `++index2`, respectively). What if instead of using the `++` operator you increment `index1` and `index2` separate from your calls to `result.add` using the `+=` operator? When doing so, should incrementation precede or succeed a call to `result.add`?
 
 ### Student Response
 
-It appears my issue originated from the difference between pre-incrementation (`++index1`/`++index2`) and post-incrementaiton (`index1++`/`index2++`). Each iteration of each `while` loop should add the element at the specified index in the list then increment the index, which can be done with either post-incrementation or a call to `result.add` followed by incrementation:
+It appears my issue originated from the difference between pre-incrementation (`++index1`/`++index2`), which increments then returns the value of the variable, and post-incrementaiton (`index1++`/`index2++`), which returns then increments the value of the variable. Each iteration of each `while` loop should add the element at the specified index in the list then increment the index, so the method should use post-incrementation, whether through the `++` operator or a call to `result.add` followed by an incrementaion::
 
 ```java
 class ListExamples {
