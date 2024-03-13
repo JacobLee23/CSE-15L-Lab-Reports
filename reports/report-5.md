@@ -259,6 +259,8 @@ After making the above changes, all tests pass:
 
 ## Reflection
 
+I found the content from weeks 6 (`bash` and shell scripting), 7 (`vim`), and 8 (`jdb`) to be the most enjoyable and interesting topics from the second half of the quarter and likely the most practical to future CSE courses, personal programming projects, and future software work. Prior to this course, I had heard of `bash`, `vim`, and `jdb` and I knew the very basics of each of them, but I never had the need or motivation to explore them further. And even though this course only provided an introduction to each of them, birefly exploring them during lecture and lab has been enough to prompt me to further learn about each of them. I ancticipate continuing to improve my proficiency with each of them until each is a tool I am fairly comfortable using, as I hope to include each of them in my software development workflow when possible.
+
 ---
 
 # Relevant XKCD
