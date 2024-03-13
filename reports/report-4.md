@@ -10,6 +10,8 @@
 
 `ssh jal128@ieng6.ucsd.edu`: Logs into the Ieng6 remote machine with the credential `jal128@ieng6.ucsd.edu`.
 
+`cs15lwi24`: Enters the `cs15lwi24` workspace.
+
 ## Step 5
 
 ![Step 5](../assets/report-4/step-5.png)
@@ -29,18 +31,19 @@
 ![Step 7a](../assets/report-4/step-7a.png)
 ![Step 7b](../assets/report-4/step-7b.png)
 
-`vim ListExamplesTests.java`: Opens *ListExamplesTests.java* with `vim` in normal mode.
+`vim ListExamples.java`: Opens *ListExamples.java* with `vim` in normal mode.
 
 ![Step 7c](../assets/report-4/step-7c.png)
 
-`:%s/li, l2/l2, l1/gc` <kbd>ENTER</kbd>: Searches for the string `l1, l2` within the file and replace each instance with the string `l2, l1`, prompting for confirmation before performing each replacement.
+`:%s/index1 += 1/index2 += 1/gc` <kbd>ENTER</kbd>: Searches for the string `index1 += 1` within the file and replace each instance with the string `index2 += 1`, prompting for confirmation before performing each replacement.
 
 ![Step 7d](../assets/report-4/step-7d.png)
 ![Step 7e](../assets/report-4/step-7e.png)
-
-`ny`: Skips the first replacement; Performs the second replacement.
-
 ![Step 7f](../assets/report-4/step-7f.png)
+
+`nny`: Skips the first replacement; Skips the second replacement; Performs the second replacement.
+
+![Step 7g](../assets/report-4/step-7g.png)
 
 `:wq`: Saves the changes made to the file; Exits `vim`.
 
@@ -54,7 +57,7 @@
 
 ![Step 9b](../assets/report-4/step-9a.png)
 
-`git commit -a -m <message>`: Creates a new commit containing all changed files (`-a`), adding the commit to the local repository log under the commit message `<message>` (`-m <message>`).
+`git commit -a -m "fix: correct ListExamples.merge method"`: Creates a new commit containing all changed files (`-a`), adding the commit to the local repository log under the commit message `"fix: correct ListExamples.merge method"` (`-m <message>`).
 
 ![Step 9b](../assets/report-4/step-9b.png)
 
