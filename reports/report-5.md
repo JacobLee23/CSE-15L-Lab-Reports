@@ -4,7 +4,7 @@
 
 ## Debugging
 
-<blockquote>
+---
 
 ### Original Post
 
@@ -21,8 +21,6 @@ Here is the file hierarchy of my working directory, `src/report-5/`:
 ![File Hierarchy](../assets/report-5/file-hierarchy.png)
 
 Below are the relevant contents of the files relevant to this issue:
-
----
 
 [`ListExamples.java`](../src/report-5/ListExamples.java):
 ```java
@@ -150,15 +148,13 @@ javac -cp ".;lib/hamcrest-core-1.3.jar;lib/junit-4.13.2.jar" *.java
 java -cp ".;lib/junit-4.13.2.jar;lib/hamcrest-core-1.3.jar" org.junit.runner.JUnitCore ListTests
 ```
 
-<blockquote>
+---
 
 ### TA Response
 
 I noticed that when incrementing `index1` and `index2` you use the `++` operator (`++index1` and `++index2`, respectively). Remember the is a difference between pre-incrementation (`++x`) and post-incrementation (`x++`). What if instead of using the `++` operator you increment `index1` and `index2` separate from your calls to `result.add` using the `+=` operator? When doing so, should incrementation precede or succeed a call to `result.add`?
 
-</blockquote>
-
-<blockquote>
+---
 
 ### Student Response
 
@@ -203,9 +199,7 @@ After making the above changes, all tests pass:
 
 ![Test Pass](../assets/report-5/test-pass.png)
 
-</blockquote>
-
-</blockquote>
+---
 
 ## Reflection
 
