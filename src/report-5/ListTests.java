@@ -1,7 +1,3 @@
-/**
- * 
- */
-
 import static org.junit.Assert.*;
 
 import java.util.ArrayList;
@@ -9,12 +5,8 @@ import java.util.Collections;
 import java.util.List;
 import org.junit.*;
 
-/**
- * 
- */
 public class ListTests {
 
-    /* */
     String[] input0 = {};
     String[] input1 = { "", "\t", "\n", " " };
     String[] input2 = { "a", "b", "c", "d", "e" };
@@ -22,9 +14,6 @@ public class ListTests {
     String[] input4 = { "AA", "Aa", "aA", "aa" };
     String[] input5 = { "1", "12", "123", "a", "ab", "abc" };
 
-    /**
-     * 
-     */
     @Test
     public void testFilter() {
         this.helpFilter(this.input0, new String[] {}, String::isEmpty);
@@ -79,13 +68,6 @@ public class ListTests {
         );
     }
 
-    /**
-     * 
-     * 
-     * @param arrInput
-     * @param arrOutput
-     * @param sc
-     */
     public void helpFilter(
         String[] arrInput, String[] arrOutput, StringChecker sc
     ) {
@@ -214,4 +196,5 @@ public class ListTests {
 
         assertEquals(output, ListExamples.merge(input1, input2));
     }
+
 }
